@@ -2,6 +2,7 @@ import csv
 import numpy as np
 import os
 from PIL import Image
+from sklearn.preprocessing import LabelEncoder
 
 class C100Dataset:
     """
@@ -12,6 +13,7 @@ class C100Dataset:
     tr_y = None  # Y (label) of the training set.
     ts_x = None  # X (data) of the test set.
     ts_y = None  # Y (label) of the test set.
+    label_encoder = None  # Label encoder object
 
     def __init__(self, trainfile, testfile):
 
@@ -22,6 +24,7 @@ class C100Dataset:
         tr_y = []  # List to store training labels
         ts_x = []  # List to store test images
         ts_y = []  # List to store test labels
+
         with open(trainfile, 'r') as csvfile:
             csv_reader = csv.reader(csvfile)
             for row in csv_reader:
@@ -48,6 +51,12 @@ class C100Dataset:
         self.ts_x = np.array(ts_x)
         self.ts_y = np.array(ts_y)
 
+        self.label_encoder = LabelEncoder()
+        self.label_encoder.fit(np.concatenate((self.tr_y, self.ts_y), axis=0))
+
+        self.tr_y = self.label_encoder.transform(self.tr_y)
+        self.ts_y = self.label_encoder.transform(self.ts_y)
+
         print(len(self.tr_x))
         print(len(self.tr_y))
         print(len(self.ts_x))
@@ -56,7 +65,7 @@ class C100Dataset:
     def getDataset(self):
         return [self.tr_x, self.tr_y, self.ts_x, self.ts_y]
     
-def getClasses(self):
+    def getClasses(self):
         return np.unique(np.concatenate((self.tr_y, self.ts_y), axis=0)).tolist()
 
 # # Example usage:
