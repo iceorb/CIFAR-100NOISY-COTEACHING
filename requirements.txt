@@ -3,3 +3,5 @@ matplotlib
 tqdm
 torch
 torchvision
+scikit-learn
+matplotlib
