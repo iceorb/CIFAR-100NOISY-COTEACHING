@@ -53,14 +53,14 @@ class C100Dataset:
 
         self.label_encoder = LabelEncoder()
         self.label_encoder.fit(np.concatenate((self.tr_y, self.ts_y), axis=0))
-
         self.tr_y = self.label_encoder.transform(self.tr_y)
         self.ts_y = self.label_encoder.transform(self.ts_y)
 
-        print(len(self.tr_x))
-        print(len(self.tr_y))
-        print(len(self.ts_x))
-        print(len(self.ts_y))
+        # Print the shapes of the training and test sets
+        print("Test set shape: {}".format(self.ts_x.shape))
+        print("Test labels shape: {}".format(self.ts_y.shape))
+        print("Training set shape: {}".format(self.tr_x.shape))
+        print("Training labels shape: {}".format(self.tr_y.shape))
 
     def getDataset(self):
         return [self.tr_x, self.tr_y, self.ts_x, self.ts_y]

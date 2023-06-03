@@ -1,30 +1,19 @@
-# Image classification with label noise on CIFAR100 dataset
+## Overview
 
-### Installing prerequisites
+The goal of this project was to implement a Coteaching approach using two models to address the challenge of noisy labels. By leveraging the disagreement between the models, a smaller subset of potentially cleaner labels could enhance the robustness of the trained model. 
 
-The prerequisite usually refers to the necessary library that your code can run with. They are also known as `dependency`. We have prepared a few libraries for you to start with. To install the prerequisite, simply type in the shell prompt (not in a python interpreter) the following:
-
-```
-$ pip install -r requirements.txt
-```
+The model architecture implements a CNN model with multiple convolutional layers and batch normalization. It applies leaky ReLU activation, pooling, and dropout operations to extract features from input images and generate predictions.
 
 ### Dataset
 
-This model uses a modified dataset [CIFAR100-NoisyLabel](https://www.kaggle.com/c/cifar100-image-classification-with-noisy-labels/data)
+This model uses a modified version of [CIFAR100-NoisyLabel](https://www.kaggle.com/c/cifar100-image-classification-with-noisy-labels/data)
 
-Each line of the dataset's `csv` file follows the below format:
-```
-filename,classname
-```
 
----
-## Image classification with dataset of noisy labels
+## Results
+![Alt text](/l_curve4_6_w_10.png "Loss Curve")
 
-Perform image classification using the given dataset of noisy label version of CIFAR-100 dataset (`cifar100_nl.csv`).
+## Thoughts 
 
-`REPORT1`: Describe model your have used (1. architecture overview, 2. any specialty of this model and etc.)
+The model begins to overfit the data after ~12 epochs, data augmentation, such as image transforms and flips may help, label smoothing and weight decay may help.
 
-`REPORT2`: Report both the training and testing accuracy in a plot (x: epoch, y: accuracy). 
-
-`REPORT3`: Discuss any ideas to improve the accuracy (e.g., new architecture, using new layers, using new loss)
-
+The primary issue of the model is overfitting the noisy labels, in which traditional methods of regularization don't help immensely. Implementing confidence weighting would help the model train, or revising the Coteaching solution. One idea adjacent to this is to build a self resistance learning model that uses adoption of confident samples to learn.
