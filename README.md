@@ -6,8 +6,10 @@ The model architecture implements a CNN model with multiple convolutional layers
 
 ## Models
 - Simple ResNet
+
   Attempted to improve performance with label smoothing, dropout, and other regularization techniques - just under 50% test accuracy
 - CNN w/ Coteaching
+
   Achieved similar performance as ResNet model unfortunately. Changes may need to be made to the loss function to account for the added complexity of 100 classes.
   
 ### Dataset
