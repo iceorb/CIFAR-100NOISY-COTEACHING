@@ -1,4 +1,4 @@
-## Overview
+# Overview
 
 The goal of this project was to implement a Coteaching approach using two models to address the challenge of noisy labels. By leveraging the disagreement between the models, a smaller subset of potentially cleaner labels could enhance the robustness of the trained model. 
 
@@ -25,5 +25,5 @@ The model begins to overfit the data after ~12 epochs, data augmentation, such a
 
 The primary issue of the model is overfitting the noisy labels, in which traditional methods of regularization don't help immensely. Implementing confidence weighting would help the model train, or revising the Coteaching solution. One idea adjacent to this is to build a self resistance learning model that uses adoption of confident samples to learn.
 
-# References
+## References
 https://github.com/yeachan-kr/pytorch-coteaching/
