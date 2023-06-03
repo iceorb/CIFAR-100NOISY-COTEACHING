@@ -19,7 +19,7 @@ This model uses a modified version of [CIFAR100-NoisyLabel](https://www.kaggle.c
 
 ## Results
 ![Alt text](/RESNETcurve.png "ResNet results")
-![Alt text](/COLEARNINGresults "Loss Curve")
+![Alt text](/COLEARNINGresults.png "Loss Curve")
 
 ## Thoughts 
 
