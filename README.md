@@ -17,3 +17,6 @@ This model uses a modified version of [CIFAR100-NoisyLabel](https://www.kaggle.c
 The model begins to overfit the data after ~12 epochs, data augmentation, such as image transforms and flips may help, label smoothing and weight decay may help.
 
 The primary issue of the model is overfitting the noisy labels, in which traditional methods of regularization don't help immensely. Implementing confidence weighting would help the model train, or revising the Coteaching solution. One idea adjacent to this is to build a self resistance learning model that uses adoption of confident samples to learn.
+
+# References
+https://github.com/yeachan-kr/pytorch-coteaching/
