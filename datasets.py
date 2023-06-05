@@ -2,7 +2,7 @@ from torch.utils.data import Dataset
 from PIL import Image
 import pandas as pd
 import os
-from torchvision.io import read_image
+import torch
 
 class C100Dataset(Dataset):
 
@@ -42,7 +42,7 @@ class C100Dataset(Dataset):
 
     def __getitem__(self, index):
         img_path = os.path.join(self.root_dir, self.data_info.iloc[index, 0])
-        image = read_image(img_path)
+        image = Image.open(img_path).convert('RGB')
         label = self.data_info.iloc[index, 1]
 
 
