@@ -64,6 +64,12 @@ class C100Dataset(Dataset):
     def getClasses(self):
         return self.classes
     
+    def transform(self, transform=None):
+        self.transform = transform
+
+    def target_transform(self, target_transform=None):
+        self.target_transform = target_transform
+    
     def getDataset(self):
         return [self.tr_x, self.tr_y, self.ts_x, self.ts_y]
     
