@@ -11,6 +11,8 @@ The model architecture implements a CNN model with multiple convolutional layers
 - CNN w/ Coteaching
 
   Achieved similar performance as ResNet model unfortunately. Changes may need to be made to the loss function to account for the added complexity of 100 classes.
+
+  *Addendum, in order to improve validation accuracy, a few things were added-- firstly, data augmentation was mistakenly being performed on the validation set, which is no longer the case. Further, addtl data augmentation was added to help the model generalize even further in order to prevent severe overfit on the training data. In which case, the results of the validation accuracy increased by 12%, and the testing accuracy increased by about 3-4%. 
   
 ### Dataset
 
@@ -20,6 +22,9 @@ This model uses a modified version of [CIFAR100-NoisyLabel](https://www.kaggle.c
 ## Results
 ![Alt text](/RESNETcurve.png "ResNet results")
 ![Alt text](/COLEARNINGresults.png "Loss Curve")
+
+Updated Result
+![Alt text](/results/l_curve_lr1e-05_tau0.4_warmups50_gradual80_epochs150_batch64_2023-07-31_07-50-31.png "Final results")
 
 ## Thoughts 
 
