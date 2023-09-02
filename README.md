@@ -13,6 +13,8 @@ The model architecture implements a CNN model with multiple convolutional layers
   Achieved similar performance as ResNet model unfortunately. Changes may need to be made to the loss function to account for the added complexity of 100 classes.
 
   *Addendum, in order to improve validation accuracy, a few things were added-- firstly, data augmentation was mistakenly being performed on the validation set, which is no longer the case. Further, addtl data augmentation was added to help the model generalize even further in order to prevent severe overfit on the training data. In which case, the results of the validation accuracy increased by 12%, and the testing accuracy increased by about 3-4%. 
+
+  ** By reducing the batch size to just 32, we increased the amount of regularization in training-- as well as splitting the data randomly by indices were able to achieve much better validation accuracy. Further hyperparameter tuning would increase the performance of the model in testing accuracy (not shown due to training time, but around 69% accuracy)
   
 ### Dataset
 
@@ -25,6 +27,10 @@ This model uses a modified version of [CIFAR100-NoisyLabel](https://www.kaggle.c
 
 Updated Result
 ![Alt text](/results/l_curve_lr1e-05_tau0.4_warmups50_gradual80_epochs150_batch64_2023-07-31_07-50-31.png "Final results")
+
+Updated result 2
+![Alt text](/results/l_curve_lr1e-05_tau0.4_warmups50_gradual80_epochs150_batch64_2023-09-02_11-37-05.png "Final results 2")
+
 
 ## Thoughts 
 
