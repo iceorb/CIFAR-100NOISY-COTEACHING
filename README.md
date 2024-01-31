@@ -2,7 +2,7 @@
 
 The goal of this project was to implement a Coteaching approach using two models to address the challenge of noisy labels. By leveraging the disagreement between the models, a smaller subset of potentially cleaner labels could enhance the robustness of the trained model. 
 
-The model architecture implements a CNN model with multiple convolutional layers and batch normalization. It applies leaky ReLU activation, pooling, and dropout operations to extract features from input images and generate predictions.
+The model architecture implements a CNN model with multiple convolutional layers and batch normalization. It applies leaky ReLU activation, pooling, and dropout operations to extract features from input images and generate predictions. This model was adapted from the research paper linked below.
 
 ![image](https://github.com/icexorb/yonseicv/assets/102640559/205b863a-1ef5-4447-a775-8c533bbf0e07)
 
