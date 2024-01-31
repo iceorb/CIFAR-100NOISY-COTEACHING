@@ -4,6 +4,8 @@ The goal of this project was to implement a Coteaching approach using two models
 
 The model architecture implements a CNN model with multiple convolutional layers and batch normalization. It applies leaky ReLU activation, pooling, and dropout operations to extract features from input images and generate predictions.
 
+![image](https://github.com/icexorb/yonseicv/assets/102640559/205b863a-1ef5-4447-a775-8c533bbf0e07)
+
 ## Models
 - Simple ResNet
 
@@ -36,3 +38,4 @@ The primary issue of the model is overfitting the noisy labels, in which traditi
 
 ## References
 https://github.com/yeachan-kr/pytorch-coteaching/
+https://arxiv.org/pdf/1804.06872.pdf
