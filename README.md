@@ -32,9 +32,9 @@ Coteaching Model
 
 ## Thoughts 
 
-The model begins to overfit the data after ~12 epochs, data augmentation, such as image transforms and flips may help, label smoothing and weight decay may help.
+The SimpleResNet and other methods (not shown) begin to overfit after just 12 epochs, while data augmentation and other methods may help, it's clear that the data is simply too noisy, too complex, and simply unattainable with other methods.
 
-The primary issue of the model is overfitting the noisy labels, in which traditional methods of regularization don't help immensely. Implementing confidence weighting would help the model train, or revising the Coteaching solution. One idea adjacent to this is to build a self resistance learning model that uses adoption of confident samples to learn.
+I propose Coteaching, a method that uses two different models to improve confidence of the models overall.
 
 ## References
 https://github.com/yeachan-kr/pytorch-coteaching/
